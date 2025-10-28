@@ -15,16 +15,38 @@ showMenu('nav-toggle', 'nav-menu');
 //Toggling Active Link and Scroll Spy
 const navLink = document.querySelectorAll('.nav-link');
 const sections = document.querySelectorAll('.section');
+const navPill = document.querySelector('.nav-pill');
+
+function movePill(element) {
+    if (navPill && element) {
+        const rect = element.getBoundingClientRect();
+        const navMenuRect = element.closest('.nav-menu').getBoundingClientRect();
+
+        navPill.style.width = `${rect.width}px`;
+        navPill.style.height = `${rect.height}px`;
+        navPill.style.left = `${rect.left - navMenuRect.left}px`;
+        navPill.style.top = `${rect.top - navMenuRect.top}px`;
+    }
+}
 
 function linkAction() {
     navLink.forEach(n => n.classList.remove('active'));
     this.classList.add('active');
+    movePill(this);
 
     const navMenu = document.getElementById('nav-menu');
     navMenu.classList.remove('show');
 }
 
 navLink.forEach(n => n.addEventListener('click', linkAction));
+
+// Initialize pill position
+window.addEventListener('load', () => {
+    const activeLink = document.querySelector('.nav-link.active');
+    if (activeLink) {
+        movePill(activeLink);
+    }
+});
 
 // Scroll Spy - Update active link based on scroll position
 function scrollActive() {
@@ -40,7 +62,11 @@ function scrollActive() {
         const sectionId = current.getAttribute('id');
 
         if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            document.querySelector('.nav-link[href*=' + sectionId + ']')?.classList.add('active');
+            const activeLink = document.querySelector('.nav-link[href*=' + sectionId + ']');
+            if (activeLink) {
+                activeLink.classList.add('active');
+                movePill(activeLink);
+            }
         }
     });
 }
@@ -112,10 +138,10 @@ window.addEventListener('load', () => {
     const animationContainer = document.getElementById('animation-container');
 
     if (animationContainer) {
-        // Espera 2.5s (durada animació) + 0.5s addicional abans de començar a amagar
+        // Espera 3.5s (durada animació) + 0.5s addicional abans de començar a amagar
         setTimeout(() => {
             animationContainer.classList.add('hide');
-        }, 3000);
+        }, 4000);
 
         animationContainer.addEventListener('transitionend', () => {
             if (animationContainer.classList.contains('hide')) {
