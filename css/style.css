@@ -640,6 +640,12 @@ input:checked + .slider:before {
     color: #f39c12;
 }
 
+.language-flag {
+    width: 24px;
+    height: 18px;
+    display: inline-block;
+}
+
 /* Footer */
 .footer {
     background-color: var(--surface-color);

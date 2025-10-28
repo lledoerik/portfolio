@@ -141,7 +141,7 @@ window.addEventListener('load', () => {
         // Espera 3.5s (durada animació) + 0.5s addicional abans de començar a amagar
         setTimeout(() => {
             animationContainer.classList.add('hide');
-        }, 4000);
+        }, 3000);
 
         animationContainer.addEventListener('transitionend', () => {
             if (animationContainer.classList.contains('hide')) {
