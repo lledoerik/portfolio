@@ -12,8 +12,9 @@ const showMenu = (toggleId, navId) => {
 
 showMenu('nav-toggle', 'nav-menu');
 
-//Toggling Active Link
+//Toggling Active Link and Scroll Spy
 const navLink = document.querySelectorAll('.nav-link');
+const sections = document.querySelectorAll('.section');
 
 function linkAction() {
     navLink.forEach(n => n.classList.remove('active'));
@@ -25,8 +26,27 @@ function linkAction() {
 
 navLink.forEach(n => n.addEventListener('click', linkAction));
 
+// Scroll Spy - Update active link based on scroll position
+function scrollActive() {
+    const scrollY = window.pageYOffset;
+
+    sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 100;
+        const sectionId = current.getAttribute('id');
+
+        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            document.querySelector('.nav-link[href*=' + sectionId + ']')?.classList.add('active');
+        } else {
+            document.querySelector('.nav-link[href*=' + sectionId + ']')?.classList.remove('active');
+        }
+    });
+}
+
+window.addEventListener('scroll', scrollActive);
+
 document.addEventListener('DOMContentLoaded', () => {
-    const toggleSwitch = document.querySelector('.theme-switch');
+    const toggleSwitch = document.querySelector('#checkbox');
     const currentTheme = localStorage.getItem('theme');
 
     // Verifica si l'usuari ja té una preferència guardada
@@ -36,6 +56,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentTheme === 'light') {
             toggleSwitch.checked = true;
         }
+    } else {
+        // Si no hi ha preferència guardada, estableix dark mode per defecte
+        document.documentElement.setAttribute('data-theme', 'dark');
+        toggleSwitch.checked = false;
     }
 
     // Funció per canviar entre dark i light mode
@@ -82,13 +106,14 @@ sr.reveal('.contact-input', {interval: 20} )
 
 
 // Animation SVG
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
     const animationContainer = document.getElementById('animation-container');
 
     if (animationContainer) {
+        // Espera 2.5s (durada animació) + 0.5s addicional abans de començar a amagar
         setTimeout(() => {
             animationContainer.classList.add('hide');
-        }, 5000);
+        }, 3000);
 
         animationContainer.addEventListener('transitionend', () => {
             if (animationContainer.classList.contains('hide')) {

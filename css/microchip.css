@@ -31,9 +31,10 @@
 .microchip__lines,
 .microchip__spark,
 .microchip__wave {
-    animation-duration: 5.8s;
+    animation-duration: 2.5s;
     animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
-    animation-iteration-count: infinite;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
 .microchip__core,
