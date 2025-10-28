@@ -30,6 +30,10 @@ navLink.forEach(n => n.addEventListener('click', linkAction));
 function scrollActive() {
     const scrollY = window.pageYOffset;
 
+    // Primer, eliminem 'active' de tots els links
+    navLink.forEach(n => n.classList.remove('active'));
+
+    // Després trobem quina secció està activa i afegim la classe
     sections.forEach(current => {
         const sectionHeight = current.offsetHeight;
         const sectionTop = current.offsetTop - 100;
@@ -37,8 +41,6 @@ function scrollActive() {
 
         if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
             document.querySelector('.nav-link[href*=' + sectionId + ']')?.classList.add('active');
-        } else {
-            document.querySelector('.nav-link[href*=' + sectionId + ']')?.classList.remove('active');
         }
     });
 }
