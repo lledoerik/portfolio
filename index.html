@@ -3,661 +3,620 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lledo's Portfolio</title>
-    <link rel="icon" type="img/png" href="img/logo.png">
+    <meta name="description" content="Èrik Calvo Lledó - Junior Software Developer specializing in Java, Python, and Web Development">
+    <meta name="keywords" content="software developer, java, python, web development, portfolio">
+    <meta name="author" content="Èrik Calvo Lledó">
+
+    <title>Èrik Calvo Lledó | Software Developer Portfolio</title>
+
+    <link rel="icon" type="image/png" href="img/logo.png">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/microchip.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css">
 </head>
 <body>
-    <!--ANIMATION SVG-->
-    <div id="animation-container">
-        <svg class="microchip" viewBox="0 0 128 128" width="128px" height="128px" role="img" aria-label="A square pops in emitting waves and lines, and sparks run through the lines">
-            <symbol id="dot-1">
-                <circle r="3" cx="3" cy="38" />
-            </symbol>
-            <symbol id="dot-2">
-                <circle r="3" cx="3" cy="54" />
-            </symbol>
-            <symbol id="dot-3">
-                <circle r="3" cx="3" cy="70" />
-            </symbol>
-            <symbol id="dot-4">
-                <circle r="3" cx="3" cy="3" />
-            </symbol>
-            <symbol id="dot-5">
-                <circle r="3" cx="20" cy="3" />
-            </symbol>
-            <symbol id="dot-6">
-                <circle r="3" cx="3" cy="30" />
-            </symbol>
-            <symbol id="dot-7">
-                <circle r="3" cx="37" cy="3" />
-            </symbol>
-            <symbol id="dot-8">
-                <circle r="3" cx="54" cy="3" />
-            </symbol>
-            <symbol id="dot-9">
-                <circle r="3" cx="71" cy="3" />
-            </symbol>
-            <symbol id="line-1">
-                <polyline points="12 54,12 46,3 46,3 38" stroke-dasharray="42 42" />
-            </symbol>
-            <symbol id="line-2">
-                <polyline points="29 54,3 54" stroke-dasharray="42 42" />
-            </symbol>
-            <symbol id="line-3">
-                <polyline points="12 54,12 62,3 62,3 70" stroke-dasharray="42 42" />
-            </symbol>
-            <symbol id="line-4">
-                <polyline points="28 20,28 12,20 12,20 3" stroke-dasharray="60 60" />
-            </symbol>
-            <symbol id="line-5">
-                <polyline points="37 29,37 20,3 20,3 3" stroke-dasharray="60 60" />
-            </symbol>
-            <symbol id="line-6">
-                <polyline points="15 20,15 30,3 30" stroke-dasharray="60 60" />
-            </symbol>
-            <symbol id="line-7">
-                <polyline points="54 12,37 12,37 3" stroke-dasharray="43 43" />
-            </symbol>
-            <symbol id="line-8">
-                <polyline points="54 29,54 3" stroke-dasharray="43 43" />
-            </symbol>
-            <symbol id="line-9">
-                <polyline points="54 12,71 12,71 3" stroke-dasharray="43 43" />
-            </symbol>
-            <symbol id="spark-1">
-                <polyline points="12 54,12 46,3 46,3 38" stroke-dasharray="15 69" />
-            </symbol>
-            <symbol id="spark-2">
-                <polyline points="29 54,3 54" stroke-dasharray="15 69" />
-            </symbol>
-            <symbol id="spark-3">
-                <polyline points="12 54,12 62,3 62,3 70" stroke-dasharray="15 69" />
-            </symbol>
-            <symbol id="spark-4">
-                <polyline points="28 20,28 12,20 12,20 3" stroke-dasharray="15 105" />
-            </symbol>
-            <symbol id="spark-5">
-                <polyline points="37 29,37 20,3 20,3 3" stroke-dasharray="15 105" />
-            </symbol>
-            <symbol id="spark-6">
-                <polyline points="15 20,15 30,3 30" stroke-dasharray="15 105" />
-            </symbol>
-            <symbol id="spark-7">
-                <polyline points="54 12,37 12,37 3" stroke-dasharray="15 71" />
-            </symbol>
-            <symbol id="spark-8">
-                <polyline points="54 29,54 3" stroke-dasharray="15 71" />
-            </symbol>
-            <symbol id="spark-9">
-                <polyline points="54 12,71 12,71 3" stroke-dasharray="15 71" />
-            </symbol>
-            <symbol id="wave">
-                <rect x="3" y="3" rx="2.5" ry="2.5" width="44" height="44" />
-            </symbol>
-            <g transform="translate(10,10)">
-                <g class="microchip__lines" stroke-linecap="round" stroke-linejoin="round">
-                    <g>
-                        <g fill="none" stroke="currentcolor">
-                            <use class="microchip__line microchip__line--1" href="#line-1" />
-                            <use class="microchip__spark microchip__spark--1" href="#spark-1" />
-                            <use class="microchip__line microchip__line--2" href="#line-2" />
-                            <use class="microchip__spark microchip__spark--2" href="#spark-2" />
-                            <use class="microchip__line microchip__line--3" href="#line-3" />
-                            <use class="microchip__spark microchip__spark--3" href="#spark-3" />
-                        </g>
-                        <g fill="currentcolor">
-                            <use class="microchip__dot microchip__dot--1" href="#dot-1" />
-                            <use class="microchip__dot microchip__dot--2" href="#dot-2" />
-                            <use class="microchip__dot microchip__dot--3" href="#dot-3" />
-                        </g>
+<!-- Initial Loading Animation -->
+<div id="animation-container">
+    <svg class="microchip" viewBox="0 0 128 128" width="128px" height="128px" role="img" aria-label="Loading animation">
+        <symbol id="dot-1"><circle r="3" cx="3" cy="38" /></symbol>
+        <symbol id="dot-2"><circle r="3" cx="3" cy="54" /></symbol>
+        <symbol id="dot-3"><circle r="3" cx="3" cy="70" /></symbol>
+        <symbol id="dot-4"><circle r="3" cx="3" cy="3" /></symbol>
+        <symbol id="dot-5"><circle r="3" cx="20" cy="3" /></symbol>
+        <symbol id="dot-6"><circle r="3" cx="3" cy="30" /></symbol>
+        <symbol id="dot-7"><circle r="3" cx="37" cy="3" /></symbol>
+        <symbol id="dot-8"><circle r="3" cx="54" cy="3" /></symbol>
+        <symbol id="dot-9"><circle r="3" cx="71" cy="3" /></symbol>
+        <symbol id="line-1"><polyline points="12 54,12 46,3 46,3 38" stroke-dasharray="42 42" /></symbol>
+        <symbol id="line-2"><polyline points="29 54,3 54" stroke-dasharray="42 42" /></symbol>
+        <symbol id="line-3"><polyline points="12 54,12 62,3 62,3 70" stroke-dasharray="42 42" /></symbol>
+        <symbol id="line-4"><polyline points="28 20,28 12,20 12,20 3" stroke-dasharray="60 60" /></symbol>
+        <symbol id="line-5"><polyline points="37 29,37 20,3 20,3 3" stroke-dasharray="60 60" /></symbol>
+        <symbol id="line-6"><polyline points="15 20,15 30,3 30" stroke-dasharray="60 60" /></symbol>
+        <symbol id="line-7"><polyline points="54 12,37 12,37 3" stroke-dasharray="43 43" /></symbol>
+        <symbol id="line-8"><polyline points="54 29,54 3" stroke-dasharray="43 43" /></symbol>
+        <symbol id="line-9"><polyline points="54 12,71 12,71 3" stroke-dasharray="43 43" /></symbol>
+        <symbol id="spark-1"><polyline points="12 54,12 46,3 46,3 38" stroke-dasharray="15 69" /></symbol>
+        <symbol id="spark-2"><polyline points="29 54,3 54" stroke-dasharray="15 69" /></symbol>
+        <symbol id="spark-3"><polyline points="12 54,12 62,3 62,3 70" stroke-dasharray="15 69" /></symbol>
+        <symbol id="spark-4"><polyline points="28 20,28 12,20 12,20 3" stroke-dasharray="15 105" /></symbol>
+        <symbol id="spark-5"><polyline points="37 29,37 20,3 20,3 3" stroke-dasharray="15 105" /></symbol>
+        <symbol id="spark-6"><polyline points="15 20,15 30,3 30" stroke-dasharray="15 105" /></symbol>
+        <symbol id="spark-7"><polyline points="54 12,37 12,37 3" stroke-dasharray="15 71" /></symbol>
+        <symbol id="spark-8"><polyline points="54 29,54 3" stroke-dasharray="15 71" /></symbol>
+        <symbol id="spark-9"><polyline points="54 12,71 12,71 3" stroke-dasharray="15 71" /></symbol>
+        <symbol id="wave"><rect x="3" y="3" rx="2.5" ry="2.5" width="44" height="44" /></symbol>
+
+        <g transform="translate(10,10)">
+            <g class="microchip__lines" stroke-linecap="round" stroke-linejoin="round">
+                <g>
+                    <g fill="none" stroke="currentcolor">
+                        <use class="microchip__line microchip__line--1" href="#line-1" />
+                        <use class="microchip__spark microchip__spark--1" href="#spark-1" />
+                        <use class="microchip__line microchip__line--2" href="#line-2" />
+                        <use class="microchip__spark microchip__spark--2" href="#spark-2" />
+                        <use class="microchip__line microchip__line--3" href="#line-3" />
+                        <use class="microchip__spark microchip__spark--3" href="#spark-3" />
                     </g>
-                    <g>
-                        <g fill="none" stroke="currentcolor">
-                            <use class="microchip__line microchip__line--4" href="#line-4" />
-                            <use class="microchip__spark microchip__spark--4" href="#spark-4" />
-                            <use class="microchip__line microchip__line--5" href="#line-5" />
-                            <use class="microchip__spark microchip__spark--5" href="#spark-5" />
-                            <use class="microchip__line microchip__line--6" href="#line-6" />
-                            <use class="microchip__spark microchip__spark--6" href="#spark-6" />
-                        </g>
-                        <g fill="currentcolor">
-                            <use class="microchip__dot microchip__dot--4" href="#dot-4" />
-                            <use class="microchip__dot microchip__dot--5" href="#dot-5" />
-                            <use class="microchip__dot microchip__dot--6" href="#dot-6" />
-                        </g>
-                    </g>
-                    <g>
-                        <g fill="none" stroke="currentcolor">
-                            <use class="microchip__line microchip__line--7" href="#line-7" />
-                            <use class="microchip__spark microchip__spark--7" href="#spark-7" />
-                            <use class="microchip__line microchip__line--8" href="#line-8" />
-                            <use class="microchip__spark microchip__spark--8" href="#spark-8" />
-                            <use class="microchip__line microchip__line--9" href="#line-9" />
-                            <use class="microchip__spark microchip__spark--9" href="#spark-9" />
-                        </g>
-                        <g fill="currentcolor">
-                            <use class="microchip__dot microchip__dot--7" href="#dot-7" />
-                            <use class="microchip__dot microchip__dot--8" href="#dot-8" />
-                            <use class="microchip__dot microchip__dot--9" href="#dot-9" />
-                        </g>
-                    </g>
-                    <g transform="translate(108,0) scale(-1,1)">
-                        <g fill="none" stroke="currentcolor">
-                            <use class="microchip__line microchip__line--4" href="#line-4" />
-                            <use class="microchip__spark microchip__spark--4" href="#spark-4" />
-                            <use class="microchip__line microchip__line--5" href="#line-5" />
-                            <use class="microchip__spark microchip__spark--5" href="#spark-5" />
-                            <use class="microchip__line microchip__line--6" href="#line-6" />
-                            <use class="microchip__spark microchip__spark--6" href="#spark-6" />
-                        </g>
-                        <g fill="currentcolor">
-                            <use class="microchip__dot microchip__dot--4" href="#dot-4" />
-                            <use class="microchip__dot microchip__dot--5" href="#dot-5" />
-                            <use class="microchip__dot microchip__dot--6" href="#dot-6" />
-                        </g>
-                    </g>
-                    <g transform="translate(108,0) scale(-1,1)">
-                        <g fill="none" stroke="currentcolor">
-                            <use class="microchip__line microchip__line--1" href="#line-1" />
-                            <use class="microchip__spark microchip__spark--1" href="#spark-1" />
-                            <use class="microchip__line microchip__line--2" href="#line-2" />
-                            <use class="microchip__spark microchip__spark--2" href="#spark-2" />
-                            <use class="microchip__line microchip__line--3" href="#line-3" />
-                            <use class="microchip__spark microchip__spark--3" href="#spark-3" />
-                        </g>
-                        <g fill="currentcolor">
-                            <use class="microchip__dot microchip__dot--1" href="#dot-1" />
-                            <use class="microchip__dot microchip__dot--2" href="#dot-2" />
-                            <use class="microchip__dot microchip__dot--3" href="#dot-3" />
-                        </g>
-                    </g>
-                    <g transform="translate(108,108) scale(-1,-1)">
-                        <g fill="none" stroke="currentcolor">
-                            <use class="microchip__line microchip__line--4" href="#line-4" />
-                            <use class="microchip__spark microchip__spark--4" href="#spark-4" />
-                            <use class="microchip__line microchip__line--5" href="#line-5" />
-                            <use class="microchip__spark microchip__spark--5" href="#spark-5" />
-                            <use class="microchip__line microchip__line--6" href="#line-6" />
-                            <use class="microchip__spark microchip__spark--6" href="#spark-6" />
-                        </g>
-                        <g fill="currentcolor">
-                            <use class="microchip__dot microchip__dot--4" href="#dot-4" />
-                            <use class="microchip__dot microchip__dot--5" href="#dot-5" />
-                            <use class="microchip__dot microchip__dot--6" href="#dot-6" />
-                        </g>
-                    </g>
-                    <g transform="translate(0,108) scale(1,-1)">
-                        <g fill="none" stroke="currentcolor">
-                            <use class="microchip__line microchip__line--7" href="#line-7" />
-                            <use class="microchip__spark microchip__spark--7" href="#spark-7" />
-                            <use class="microchip__line microchip__line--8" href="#line-8" />
-                            <use class="microchip__spark microchip__spark--8" href="#spark-8" />
-                            <use class="microchip__line microchip__line--9" href="#line-9" />
-                            <use class="microchip__spark microchip__spark--9" href="#spark-9" />
-                        </g>
-                        <g fill="currentcolor">
-                            <use class="microchip__dot microchip__dot--7" href="#dot-7" />
-                            <use class="microchip__dot microchip__dot--8" href="#dot-8" />
-                            <use class="microchip__dot microchip__dot--9" href="#dot-9" />
-                        </g>
-                    </g>
-                    <g transform="translate(0,108) scale(1,-1)">
-                        <g fill="none" stroke="currentcolor">
-                            <use class="microchip__line microchip__line--4" href="#line-4" />
-                            <use class="microchip__spark microchip__spark--4" href="#spark-4" />
-                            <use class="microchip__line microchip__line--5" href="#line-5" />
-                            <use class="microchip__spark microchip__spark--5" href="#spark-5" />
-                            <use class="microchip__line microchip__line--6" href="#line-6" />
-                            <use class="microchip__spark microchip__spark--6" href="#spark-6" />
-                        </g>
-                        <g fill="currentcolor">
-                            <use class="microchip__dot microchip__dot--4" href="#dot-4" />
-                            <use class="microchip__dot microchip__dot--5" href="#dot-5" />
-                            <use class="microchip__dot microchip__dot--6" href="#dot-6" />
-                        </g>
+                    <g fill="currentcolor">
+                        <use class="microchip__dot microchip__dot--1" href="#dot-1" />
+                        <use class="microchip__dot microchip__dot--2" href="#dot-2" />
+                        <use class="microchip__dot microchip__dot--3" href="#dot-3" />
                     </g>
                 </g>
-                <g transform="translate(29,29)">
-                    <g class="microchip__center">
-                        <g fill="none" stroke="currentcolor" stroke-width="6">
-                            <use class="microchip__wave microchip__wave--1" href="#wave" />
-                            <use class="microchip__wave microchip__wave--2" href="#wave" />
-                        </g>
-                        <rect class="microchip__core" fill="currentcolor" rx="5" ry="5" width="50" height="50" />
+                <g>
+                    <g fill="none" stroke="currentcolor">
+                        <use class="microchip__line microchip__line--4" href="#line-4" />
+                        <use class="microchip__spark microchip__spark--4" href="#spark-4" />
+                        <use class="microchip__line microchip__line--5" href="#line-5" />
+                        <use class="microchip__spark microchip__spark--5" href="#spark-5" />
+                        <use class="microchip__line microchip__line--6" href="#line-6" />
+                        <use class="microchip__spark microchip__spark--6" href="#spark-6" />
+                    </g>
+                    <g fill="currentcolor">
+                        <use class="microchip__dot microchip__dot--4" href="#dot-4" />
+                        <use class="microchip__dot microchip__dot--5" href="#dot-5" />
+                        <use class="microchip__dot microchip__dot--6" href="#dot-6" />
+                    </g>
+                </g>
+                <g>
+                    <g fill="none" stroke="currentcolor">
+                        <use class="microchip__line microchip__line--7" href="#line-7" />
+                        <use class="microchip__spark microchip__spark--7" href="#spark-7" />
+                        <use class="microchip__line microchip__line--8" href="#line-8" />
+                        <use class="microchip__spark microchip__spark--8" href="#spark-8" />
+                        <use class="microchip__line microchip__line--9" href="#line-9" />
+                        <use class="microchip__spark microchip__spark--9" href="#spark-9" />
+                    </g>
+                    <g fill="currentcolor">
+                        <use class="microchip__dot microchip__dot--7" href="#dot-7" />
+                        <use class="microchip__dot microchip__dot--8" href="#dot-8" />
+                        <use class="microchip__dot microchip__dot--9" href="#dot-9" />
+                    </g>
+                </g>
+                <g transform="translate(108,0) scale(-1,1)">
+                    <g fill="none" stroke="currentcolor">
+                        <use class="microchip__line microchip__line--4" href="#line-4" />
+                        <use class="microchip__spark microchip__spark--4" href="#spark-4" />
+                        <use class="microchip__line microchip__line--5" href="#line-5" />
+                        <use class="microchip__spark microchip__spark--5" href="#spark-5" />
+                        <use class="microchip__line microchip__line--6" href="#line-6" />
+                        <use class="microchip__spark microchip__spark--6" href="#spark-6" />
+                    </g>
+                    <g fill="currentcolor">
+                        <use class="microchip__dot microchip__dot--4" href="#dot-4" />
+                        <use class="microchip__dot microchip__dot--5" href="#dot-5" />
+                        <use class="microchip__dot microchip__dot--6" href="#dot-6" />
+                    </g>
+                </g>
+                <g transform="translate(108,0) scale(-1,1)">
+                    <g fill="none" stroke="currentcolor">
+                        <use class="microchip__line microchip__line--1" href="#line-1" />
+                        <use class="microchip__spark microchip__spark--1" href="#spark-1" />
+                        <use class="microchip__line microchip__line--2" href="#line-2" />
+                        <use class="microchip__spark microchip__spark--2" href="#spark-2" />
+                        <use class="microchip__line microchip__line--3" href="#line-3" />
+                        <use class="microchip__spark microchip__spark--3" href="#spark-3" />
+                    </g>
+                    <g fill="currentcolor">
+                        <use class="microchip__dot microchip__dot--1" href="#dot-1" />
+                        <use class="microchip__dot microchip__dot--2" href="#dot-2" />
+                        <use class="microchip__dot microchip__dot--3" href="#dot-3" />
+                    </g>
+                </g>
+                <g transform="translate(108,108) scale(-1,-1)">
+                    <g fill="none" stroke="currentcolor">
+                        <use class="microchip__line microchip__line--4" href="#line-4" />
+                        <use class="microchip__spark microchip__spark--4" href="#spark-4" />
+                        <use class="microchip__line microchip__line--5" href="#line-5" />
+                        <use class="microchip__spark microchip__spark--5" href="#spark-5" />
+                        <use class="microchip__line microchip__line--6" href="#line-6" />
+                        <use class="microchip__spark microchip__spark--6" href="#spark-6" />
+                    </g>
+                    <g fill="currentcolor">
+                        <use class="microchip__dot microchip__dot--4" href="#dot-4" />
+                        <use class="microchip__dot microchip__dot--5" href="#dot-5" />
+                        <use class="microchip__dot microchip__dot--6" href="#dot-6" />
+                    </g>
+                </g>
+                <g transform="translate(0,108) scale(1,-1)">
+                    <g fill="none" stroke="currentcolor">
+                        <use class="microchip__line microchip__line--7" href="#line-7" />
+                        <use class="microchip__spark microchip__spark--7" href="#spark-7" />
+                        <use class="microchip__line microchip__line--8" href="#line-8" />
+                        <use class="microchip__spark microchip__spark--8" href="#spark-8" />
+                        <use class="microchip__line microchip__line--9" href="#line-9" />
+                        <use class="microchip__spark microchip__spark--9" href="#spark-9" />
+                    </g>
+                    <g fill="currentcolor">
+                        <use class="microchip__dot microchip__dot--7" href="#dot-7" />
+                        <use class="microchip__dot microchip__dot--8" href="#dot-8" />
+                        <use class="microchip__dot microchip__dot--9" href="#dot-9" />
+                    </g>
+                </g>
+                <g transform="translate(0,108) scale(1,-1)">
+                    <g fill="none" stroke="currentcolor">
+                        <use class="microchip__line microchip__line--4" href="#line-4" />
+                        <use class="microchip__spark microchip__spark--4" href="#spark-4" />
+                        <use class="microchip__line microchip__line--5" href="#line-5" />
+                        <use class="microchip__spark microchip__spark--5" href="#spark-5" />
+                        <use class="microchip__line microchip__line--6" href="#line-6" />
+                        <use class="microchip__spark microchip__spark--6" href="#spark-6" />
+                    </g>
+                    <g fill="currentcolor">
+                        <use class="microchip__dot microchip__dot--4" href="#dot-4" />
+                        <use class="microchip__dot microchip__dot--5" href="#dot-5" />
+                        <use class="microchip__dot microchip__dot--6" href="#dot-6" />
                     </g>
                 </g>
             </g>
-        </svg>
-    </div>
+            <g transform="translate(29,29)">
+                <g class="microchip__center">
+                    <g fill="none" stroke="currentcolor" stroke-width="6">
+                        <use class="microchip__wave microchip__wave--1" href="#wave" />
+                        <use class="microchip__wave microchip__wave--2" href="#wave" />
+                    </g>
+                    <rect class="microchip__core" fill="currentcolor" rx="5" ry="5" width="50" height="50" />
+                </g>
+            </g>
+        </g>
+    </svg>
+</div>
 
-    <!--PORTFOLIO-->
-    <header class="l-header">
-        <nav class="nav bd-grid">
-            <div>
-                <p class="nav-logo">Lledó's Portfolio</p>
-            </div>
+<!-- Main Navigation Header -->
+<header class="l-header">
+    <nav class="nav bd-grid">
+        <div class="nav-logo">Èrik Calvo Lledó</div>
 
-            <div class="nav-menu" id="nav-menu">
-                <div class="nav-pill"></div>
-                <ul class="nav-list">
-                    <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
-                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
-                    <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
-                    <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-                    <li class="nav-item"><a href="#languages" class="nav-link">Languages</a></li>
-                </ul>
-            </div>
+        <div class="nav-menu" id="nav-menu">
+            <div class="nav-pill"></div>
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+                <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="#languages" class="nav-link">Languages</a></li>
+            </ul>
+        </div>
 
-            <div class="theme-switch-wrapper">
-                <label class="theme-switch">
-                    <input type="checkbox" id="checkbox">
-                    <span class="slider round"></span>
-                </label>
-            </div>
+        <div class="theme-switch-wrapper">
+            <label class="theme-switch" aria-label="Toggle dark/light mode">
+                <input type="checkbox" id="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </div>
 
-            <div class="nav-toggle" id="nav-toggle">
-                <i class="bx bx-menu"></i>
-            </div>
-        </nav>
-    </header>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu">
+            <i class="bx bx-menu"></i>
+        </button>
+    </nav>
+</header>
 
-    <main class="l-main">
-        <section class="home bd-grid" id="home">
-            <div class="home-data">
-                <h1 class="home-title">Hi, <br>I'm <span class="home-title-color">Èrik</span><br>Junior Developer</h1>
+<main class="l-main">
+    <!-- Hero Section -->
+    <section class="home bd-grid" id="home">
+        <div class="home-data">
+            <h1 class="home-title">Hi,<br>I'm <span class="home-title-color">Èrik</span><br>Junior Software Developer</h1>
 
-                <div class="home-actions">
-                    <a href="cv/cv_erik_calvo_eng.pdf" class="button">Download CV</a>
-                    <div class="home-social">
-                        <a href="https://linkedin.com/in/lledoerik" class="home-social-icon" aria-label="LinkedIn's profile">
-                            <i class="bx bxl-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/lledoerik" class="home-social-icon" aria-label="GitHub's profile">
-                            <i class="bx bxl-github"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="home-img">
-                <img src="img/face.png" alt="image">
-            </div>
-        </section>
-
-        <section class="about section" id="about">
-            <h2 class="section-title">About</h2>
-
-            <div class="about-container bd-grid">
-                <div class="about-img">
-                    <img src="img/me.png" alt="image">
-                </div>
-
-                <div>
-                    <h2 class="about-subtitle">I'm Èrik</h2>
-                    <p class="about-text">Junior Software Developer with experience in Java, Python, databases, data analysis, and machine learning. Skilled in technical support, teamwork, and task management. Looking for opportunities in software development to apply and further develop my technical and analytical skills.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="experience section" id="experience">
-            <h2 class="section-title">Experience</h2>
-
-            <div class="experience-container bd-grid">
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <h3 class="experience-title">Helpdesk Agent</h3>
-                        <span class="experience-company">SOSMATIC</span>
-                        <span class="experience-date">Aug. 2025 - Present</span>
-                    </div>
-                    <ul class="experience-description">
-                        <li>Resolve technical incidents, prioritize requests, and communicate solutions to users</li>
-                        <li>Rapidly adapt to new tools and workflows to resolve issues efficiently</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <h3 class="experience-title">Waiter - Bar and Restaurant Service</h3>
-                        <span class="experience-company">Frankfurt Chiribito</span>
-                        <span class="experience-date">Oct. 2023 - Mar. 2024</span>
-                    </div>
-                    <ul class="experience-description">
-                        <li>Provide prompt and courteous customer service, coordinate orders, and collaborate with team members</li>
-                        <li>Manage multiple tasks while remaining calm under pressure</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <h3 class="experience-title">IT Technician (Intern)</h3>
-                        <span class="experience-company">Barcelona Sports Institute</span>
-                        <span class="experience-date">Dec. 2022 - May 2023</span>
-                    </div>
-                    <ul class="experience-description">
-                        <li>Participated in the development of a loan management application</li>
-                        <li>Participated in the redesign of the institutional website</li>
-                        <li>Resolved technical issues for the institution</li>
-                    </ul>
-                </div>
-
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <h3 class="experience-title">Volleyball Coach</h3>
-                        <span class="experience-company">Lestonnac Barcelona School</span>
-                        <span class="experience-date">Sep. 2022 - Jun. 2023</span>
-                    </div>
-                    <ul class="experience-description">
-                        <li>Fostered teamwork and leadership</li>
-                        <li>Maintained team cohesion under pressure</li>
-                        <li>Evaluated performance to improve results</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="education section" id="education">
-            <h2 class="section-title">Education</h2>
-
-            <div class="education-container bd-grid">
-                <div class="education-item">
-                    <div class="education-header">
-                        <h3 class="education-title">Python AI Bootcamp</h3>
-                        <span class="education-institution">Fundación Esplai</span>
-                        <span class="education-date">Sep. 2025 - Dec. 2025</span>
-                    </div>
-                </div>
-
-                <div class="education-item">
-                    <div class="education-header">
-                        <h3 class="education-title">Advanced Vocational Diploma in Multi-Platform Application Development</h3>
-                        <span class="education-institution">Institut Poblenou</span>
-                        <span class="education-date">Sep. 2024 - Ongoing</span>
-                    </div>
-                </div>
-
-                <div class="education-item">
-                    <div class="education-header">
-                        <h3 class="education-title">Intermediate Vocational Diploma in Microcomputer Systems and Networks</h3>
-                        <span class="education-institution">Institut Poblenou</span>
-                        <span class="education-date">Sep. 2021 - Jun. 2023</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="skills section" id="skills">
-            <h2 class="section-title">Skills</h2>
-
-            <div class="skills-container bd-grid">
-                <div class="technical-skills">
-                    <h2 class="skills-subtitle">Technical Skills</h2>
-
-                    <h3 class="skills-category">Programming Languages</h3>
-                    <div class="skills-data">
-                        <div class="skills-names">
-                            <i class="bx bxl-java skills-icon"></i>
-                            <span class="skills-name">JAVA</span>
-                        </div>
-                    </div>
-
-                    <div class="skills-data">
-                        <div class="skills-names">
-                            <i class="bx bxl-python skills-icon"></i>
-                            <span class="skills-name">PYTHON</span>
-                        </div>
-                    </div>
-
-                    <div class="skills-data">
-                        <div class="skills-names">
-                            <i class="bx bx-code-alt skills-icon"></i>
-                            <span class="skills-name">KOTLIN</span>
-                        </div>
-                    </div>
-
-                    <h3 class="skills-category">Databases</h3>
-                    <div class="skills-data">
-                        <div class="skills-names">
-                            <i class="bx bx-data skills-icon"></i>
-                            <span class="skills-name">SQL</span>
-                        </div>
-                    </div>
-
-                    <div class="skills-data">
-                        <div class="skills-names">
-                            <i class="bx bxl-postgresql skills-icon"></i>
-                            <span class="skills-name">POSTGRESQL</span>
-                        </div>
-                    </div>
-
-                    <div class="skills-data">
-                        <div class="skills-names">
-                            <i class="bx bxl-mongodb skills-icon"></i>
-                            <span class="skills-name">MONGODB</span>
-                        </div>
-                    </div>
-
-                    <h3 class="skills-category">Web Development</h3>
-                    <div class="skills-data">
-                        <div class="skills-names">
-                            <i class="bx bxl-html5 skills-icon"></i>
-                            <span class="skills-name">HTML</span>
-                        </div>
-                    </div>
-
-                    <div class="skills-data">
-                        <div class="skills-names">
-                            <i class="bx bxl-css3 skills-icon"></i>
-                            <span class="skills-name">CSS</span>
-                        </div>
-                    </div>
-
-                    <div class="skills-data">
-                        <div class="skills-names">
-                            <i class="bx bxl-javascript skills-icon"></i>
-                            <span class="skills-name">JAVASCRIPT</span>
-                        </div>
-                    </div>
-
-                    <h3 class="skills-category">Python Frameworks</h3>
-                    <div class="skills-data">
-                        <div class="skills-names">
-                            <i class="bx bxl-flask skills-icon"></i>
-                            <span class="skills-name">FLASK</span>
-                        </div>
-                    </div>
-
-                    <div class="skills-data">
-                        <div class="skills-names">
-                            <i class="bx bxl-django skills-icon"></i>
-                            <span class="skills-name">DJANGO</span>
-                        </div>
-                    </div>
-
-                    <div class="skills-data">
-                        <div class="skills-names">
-                            <i class="bx bx-bolt-circle skills-icon"></i>
-                            <span class="skills-name">FASTAPI</span>
-                        </div>
-                    </div>
-
-                    <h3 class="skills-category">Containers & Cloud</h3>
-                    <div class="skills-data">
-                        <div class="skills-names">
-                            <i class="bx bxl-docker skills-icon"></i>
-                            <span class="skills-name">DOCKER</span>
-                        </div>
-                    </div>
-
-                    <div class="skills-data">
-                        <div class="skills-names">
-                            <i class="bx bxl-microsoft skills-icon"></i>
-                            <span class="skills-name">MICROSOFT AZURE</span>
-                        </div>
-                    </div>
-
-                    <h3 class="skills-category">Version Control</h3>
-                    <div class="skills-data">
-                        <div class="skills-names">
-                            <i class="bx bxl-git skills-icon"></i>
-                            <span class="skills-name">GIT</span>
-                        </div>
-                    </div>
-
-                    <div class="skills-data">
-                        <div class="skills-names">
-                            <i class="bx bxl-github skills-icon"></i>
-                            <span class="skills-name">GITHUB</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="soft-skills">
-                    <h2 class="skills-subtitle">Soft Skills</h2>
-
-                    <h3 class="skills-description-title">Teamwork</h3>
-                    <p class="skills-description-subtitle">Accustomed to working in teams in academic, sports, and professional settings, I have developed strong communication, coordination, and problem-solving skills. I easily adapt to different roles within a group, actively contributing to the successful progress of collective work.</p>
-
-                    <h3 class="skills-description-title">Responsibility</h3>
-                    <p class="skills-description-subtitle">I am a trustworthy person with a strong sense of commitment. As the coach of a youth volleyball team, I was responsible for the organization and management of seventeen girls, which strengthened my leadership, planning, and decision-making abilities. I have also taken care of neighbors' pets since I was young, demonstrating attention to detail and reliability.</p>
-
-                    <h3 class="skills-description-title">Customer Service</h3>
-                    <p class="skills-description-subtitle">During my time working as a waiter in a bar, I gained hands-on experience in customer service, developing communication skills, incident resolution, and a friendly, client-focused approach. I know how to maintain a professional, empathetic, and proactive attitude, adapting to different customer profiles and situations.</p>
-
-                    <h3 class="skills-description-title">Growth Mindset</h3>
-                    <p class="skills-description-subtitle">I am a reflexive and curious person with a strong desire to learn and constantly improve. I am not satisfied with what I already know; I always strive to enhance my work and acquire new skills, both academically and professionally.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="project section" id="projects">
-            <h2 class="section-title">Projects</h2>
-
-            <div class="project-container bd-grid">
-                <a href="https://github.com/lledoerik/programacio-ii" target="_blank" class="project-link">
-                    <div class="project-img">
-                        <img src="img/coding.jpg" alt="image">
-                        <div class="overlay"></div>
-                        <span class="project-text">Programming</span>
-                    </div>
+            <div class="home-actions">
+                <a href="cv/cv_erik_calvo_eng.pdf" class="button" download aria-label="Download CV">
+                    <i class="bx bx-download"></i> Download CV
                 </a>
-
-                <a href="https://github.com/lledoerik/movie-recomendation-system" target="_blank" class="project-link">
-                    <div class="project-img">
-                        <img src="img/film.jpg" alt="image">
-                        <div class="overlay"></div>
-                        <span class="project-text">Movie Recommendendation System</span>
-                    </div>
-                </a>
-
-                <a href="https://github.com/lledoerik/horacat" target="_blank" class="project-link">
-                    <div class="project-img">
-                        <img src="img/clock.jpg" alt="image">
-                        <div class="overlay"></div>
-                        <span class="project-text">horacat</span>
-                    </div>
-                </a>
-
-                <a href="https://github.com/lledoerik/recommender-system" target="_blank" class="project-link">
-                    <div class="project-img">
-                        <img src="img/movie.jpg" alt="image">
-                        <div class="overlay"></div>
-                        <span class="project-text">ML Recommender System</span>
-                    </div>
-                </a>
-
-                <a href="https://lledoerik.github.io/institut-poblenou-bootstrap/" target="_blank" class="project-link">
-                    <div class="project-img">
-                        <img src="img/insti.jpg" alt="image">
-                        <div class="overlay"></div>
-                        <span class="project-text">Insitut Poblenou</span>
-                    </div>
-                </a>
-
-                <a href="https://lledoerik.github.io/to-do/" target="_blank" class="project-link">
-                    <div class="project-img">
-                        <img src="img/notebook.jpg" alt="image">
-                        <div class="overlay"></div>
-                        <span class="project-text">To Do List</span>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-        <section class="languages section" id="languages">
-            <h2 class="section-title">Languages</h2>
-            <div class="languages-container bd-grid">
-                <div class="language-item">
-                    <span class="language-flag fi fi-es-ct"></span>
-                    <div class="language-content">
-                        <span class="language-name">Catalan</span>
-                        <span class="language-level native">Native</span>
-                    </div>
-                </div>
-
-                <div class="language-item">
-                    <span class="language-flag fi fi-es"></span>
-                    <div class="language-content">
-                        <span class="language-name">Spanish</span>
-                        <span class="language-level native">Native</span>
-                    </div>
-                </div>
-
-                <div class="language-item">
-                    <span class="language-flag fi fi-gb"></span>
-                    <div class="language-content">
-                        <span class="language-name">English</span>
-                        <span class="language-level intermediate">B2</span>
-                    </div>
-                </div>
-
-                <div class="language-item">
-                    <span class="language-flag fi fi-ch"></span>
-                    <div class="language-content">
-                        <span class="language-name">French</span>
-                        <span class="language-level basic">Basic</span>
-                    </div>
-                </div>
-
-                <div class="language-item">
-                    <span class="language-flag fi fi-it"></span>
-                    <div class="language-content">
-                        <span class="language-name">Italian</span>
-                        <span class="language-level basic">Basic</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="footer-container bd-grid">
-            <div class="footer-content">
-                <h2 class="footer-title">Èrik Calvo Lledó</h2>
-                <p class="footer-subtitle">Junior Software Developer</p>
-                <div class="footer-contact">
-                    <a href="mailto:lledoerik@gmail.com" class="footer-contact-link">
-                        <i class="bx bx-envelope"></i> lledoerik@gmail.com
+                <div class="home-social">
+                    <a href="https://linkedin.com/in/lledoerik" class="home-social-icon" target="_blank" rel="noopener noreferrer" aria-label="Visit LinkedIn profile">
+                        <i class="bx bxl-linkedin"></i>
                     </a>
-                    <span class="footer-separator">•</span>
-                    <a href="tel:+34640538469" class="footer-contact-link">
-                        <i class="bx bx-phone"></i> +34 640 53 84 69
+                    <a href="https://github.com/lledoerik" class="home-social-icon" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub profile">
+                        <i class="bx bxl-github"></i>
                     </a>
-                    <span class="footer-separator">•</span>
-                    <span class="footer-contact-link">
-                        <i class="bx bx-map"></i> Barcelona, Spain
-                    </span>
                 </div>
             </div>
         </div>
-    </footer>
 
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="js/script.js"></script>
+        <div class="home-img">
+            <img src="img/face.png" alt="Professional profile photo of Èrik Calvo Lledó">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+        <h2 class="section-title">About Me</h2>
+
+        <div class="about-container bd-grid">
+            <div class="about-img">
+                <img src="img/me.png" alt="Èrik Calvo Lledó">
+            </div>
+
+            <div>
+                <h3 class="about-subtitle">Èrik Calvo Lledó</h3>
+                <p class="about-text">Junior Software Developer with hands-on experience in Java, Python, databases, data analysis, and machine learning. Proficient in technical support, team collaboration, and project management. Currently seeking opportunities in software development to apply my technical expertise and continue expanding my analytical and programming skills in a professional environment.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience Section -->
+    <section class="experience section" id="experience">
+        <h2 class="section-title">Professional Experience</h2>
+
+        <div class="experience-container bd-grid">
+            <article class="experience-item">
+                <div class="experience-header">
+                    <h3 class="experience-title">Helpdesk Agent</h3>
+                    <span class="experience-company">SOSMATIC</span>
+                    <span class="experience-date">August 2025 - Present</span>
+                </div>
+                <ul class="experience-description">
+                    <li>Diagnose and resolve technical incidents while prioritizing support requests to ensure optimal service delivery</li>
+                    <li>Communicate technical solutions effectively to end users with varying levels of technical expertise</li>
+                    <li>Adapt rapidly to new software tools and workflows to maintain efficient issue resolution processes</li>
+                </ul>
+            </article>
+
+            <article class="experience-item">
+                <div class="experience-header">
+                    <h3 class="experience-title">Waiter - Bar and Restaurant Service</h3>
+                    <span class="experience-company">Frankfurt Chiribito</span>
+                    <span class="experience-date">October 2023 - March 2024</span>
+                </div>
+                <ul class="experience-description">
+                    <li>Delivered prompt and courteous customer service while managing multiple table orders simultaneously</li>
+                    <li>Coordinated effectively with kitchen and service team members to ensure smooth operations</li>
+                    <li>Maintained composure and efficiency during high-pressure service periods</li>
+                </ul>
+            </article>
+
+            <article class="experience-item">
+                <div class="experience-header">
+                    <h3 class="experience-title">IT Technician (Internship)</h3>
+                    <span class="experience-company">Barcelona Sports Institute</span>
+                    <span class="experience-date">December 2022 - May 2023</span>
+                </div>
+                <ul class="experience-description">
+                    <li>Contributed to the development of a loan management application system</li>
+                    <li>Assisted in the redesign and modernization of the institutional website</li>
+                    <li>Provided technical troubleshooting and support services for staff and systems</li>
+                </ul>
+            </article>
+
+            <article class="experience-item">
+                <div class="experience-header">
+                    <h3 class="experience-title">Volleyball Coach</h3>
+                    <span class="experience-company">Lestonnac Barcelona School</span>
+                    <span class="experience-date">September 2022 - June 2023</span>
+                </div>
+                <ul class="experience-description">
+                    <li>Developed and implemented training programs to foster teamwork and athletic skills</li>
+                    <li>Maintained team cohesion and motivation during competitive situations</li>
+                    <li>Evaluated individual and team performance to provide constructive feedback and drive improvement</li>
+                </ul>
+            </article>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education section" id="education">
+        <h2 class="section-title">Education</h2>
+
+        <div class="education-container bd-grid">
+            <article class="education-item">
+                <div class="education-header">
+                    <h3 class="education-title">Python AI Bootcamp</h3>
+                    <span class="education-institution">Fundación Esplai</span>
+                    <span class="education-date">September 2025 - December 2025</span>
+                </div>
+            </article>
+
+            <article class="education-item">
+                <div class="education-header">
+                    <h3 class="education-title">Advanced Vocational Diploma in Multi-Platform Application Development</h3>
+                    <span class="education-institution">Institut Poblenou</span>
+                    <span class="education-date">September 2024 - Ongoing</span>
+                </div>
+            </article>
+
+            <article class="education-item">
+                <div class="education-header">
+                    <h3 class="education-title">Intermediate Vocational Diploma in Microcomputer Systems and Networks</h3>
+                    <span class="education-institution">Institut Poblenou</span>
+                    <span class="education-date">September 2021 - June 2023</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills section" id="skills">
+        <h2 class="section-title">Technical & Professional Skills</h2>
+
+        <div class="skills-container bd-grid">
+            <div class="technical-skills">
+                <h3 class="skills-subtitle">Technical Competencies</h3>
+
+                <h4 class="skills-category">Programming Languages</h4>
+                <div class="skills-data">
+                    <div class="skills-names">
+                        <i class="bx bxl-java skills-icon"></i>
+                        <span class="skills-name">Java</span>
+                    </div>
+                </div>
+                <div class="skills-data">
+                    <div class="skills-names">
+                        <i class="bx bxl-python skills-icon"></i>
+                        <span class="skills-name">Python</span>
+                    </div>
+                </div>
+                <div class="skills-data">
+                    <div class="skills-names">
+                        <i class="bx bx-code-alt skills-icon"></i>
+                        <span class="skills-name">Kotlin</span>
+                    </div>
+                </div>
+
+                <h4 class="skills-category">Database Technologies</h4>
+                <div class="skills-data">
+                    <div class="skills-names">
+                        <i class="bx bx-data skills-icon"></i>
+                        <span class="skills-name">SQL</span>
+                    </div>
+                </div>
+                <div class="skills-data">
+                    <div class="skills-names">
+                        <i class="bx bxl-postgresql skills-icon"></i>
+                        <span class="skills-name">PostgreSQL</span>
+                    </div>
+                </div>
+                <div class="skills-data">
+                    <div class="skills-names">
+                        <i class="bx bxl-mongodb skills-icon"></i>
+                        <span class="skills-name">MongoDB</span>
+                    </div>
+                </div>
+
+                <h4 class="skills-category">Web Development</h4>
+                <div class="skills-data">
+                    <div class="skills-names">
+                        <i class="bx bxl-html5 skills-icon"></i>
+                        <span class="skills-name">HTML5</span>
+                    </div>
+                </div>
+                <div class="skills-data">
+                    <div class="skills-names">
+                        <i class="bx bxl-css3 skills-icon"></i>
+                        <span class="skills-name">CSS3</span>
+                    </div>
+                </div>
+                <div class="skills-data">
+                    <div class="skills-names">
+                        <i class="bx bxl-javascript skills-icon"></i>
+                        <span class="skills-name">JavaScript</span>
+                    </div>
+                </div>
+
+                <h4 class="skills-category">Python Frameworks</h4>
+                <div class="skills-data">
+                    <div class="skills-names">
+                        <i class="bx bxl-flask skills-icon"></i>
+                        <span class="skills-name">Flask</span>
+                    </div>
+                </div>
+                <div class="skills-data">
+                    <div class="skills-names">
+                        <i class="bx bxl-django skills-icon"></i>
+                        <span class="skills-name">Django</span>
+                    </div>
+                </div>
+                <div class="skills-data">
+                    <div class="skills-names">
+                        <i class="bx bx-bolt-circle skills-icon"></i>
+                        <span class="skills-name">FastAPI</span>
+                    </div>
+                </div>
+
+                <h4 class="skills-category">DevOps & Cloud</h4>
+                <div class="skills-data">
+                    <div class="skills-names">
+                        <i class="bx bxl-docker skills-icon"></i>
+                        <span class="skills-name">Docker</span>
+                    </div>
+                </div>
+                <div class="skills-data">
+                    <div class="skills-names">
+                        <i class="bx bxl-microsoft skills-icon"></i>
+                        <span class="skills-name">Microsoft Azure</span>
+                    </div>
+                </div>
+
+                <h4 class="skills-category">Version Control</h4>
+                <div class="skills-data">
+                    <div class="skills-names">
+                        <i class="bx bxl-git skills-icon"></i>
+                        <span class="skills-name">Git</span>
+                    </div>
+                </div>
+                <div class="skills-data">
+                    <div class="skills-names">
+                        <i class="bx bxl-github skills-icon"></i>
+                        <span class="skills-name">GitHub</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="soft-skills">
+                <h3 class="skills-subtitle">Professional Competencies</h3>
+
+                <div class="skills-description-item">
+                    <h4 class="skills-description-title">Team Collaboration</h4>
+                    <p class="skills-description-subtitle">Experienced in collaborative work environments across academic, athletic, and professional settings. Demonstrated strong communication, coordination, and problem-solving abilities. Adaptable to various team roles and dynamics while consistently contributing to collective project success.</p>
+                </div>
+
+                <div class="skills-description-item">
+                    <h4 class="skills-description-title">Leadership & Responsibility</h4>
+                    <p class="skills-description-subtitle">Proven track record of dependability and commitment. Successfully managed and organized a youth volleyball team of seventeen athletes, demonstrating leadership, strategic planning, and effective decision-making capabilities. Consistent attention to detail and reliability in all undertaken responsibilities.</p>
+                </div>
+
+                <div class="skills-description-item">
+                    <h4 class="skills-description-title">Customer Service Excellence</h4>
+                    <p class="skills-description-subtitle">Developed comprehensive customer service skills through hospitality experience, including effective communication, conflict resolution, and client-focused service delivery. Maintain professional, empathetic, and proactive approach while adapting to diverse customer needs and situations.</p>
+                </div>
+
+                <div class="skills-description-item">
+                    <h4 class="skills-description-title">Continuous Learning Mindset</h4>
+                    <p class="skills-description-subtitle">Committed to ongoing professional development and skill acquisition. Demonstrate curiosity and analytical thinking with a strong drive for continuous improvement. Actively seek opportunities to expand technical knowledge and enhance professional capabilities in both academic and workplace contexts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Portfolio Section -->
+    <section class="project section" id="projects">
+        <h2 class="section-title">Project Portfolio</h2>
+
+        <div class="project-container bd-grid">
+            <a href="https://github.com/lledoerik/programacio-ii" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Programming Projects repository">
+                <div class="project-img">
+                    <img src="img/coding.jpg" alt="Programming projects screenshot">
+                    <div class="overlay"></div>
+                    <span class="project-text">Programming Exercises</span>
+                </div>
+            </a>
+
+            <a href="https://github.com/lledoerik/movie-recomendation-system" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Movie Recommendation System repository">
+                <div class="project-img">
+                    <img src="img/film.jpg" alt="Movie recommendation system interface">
+                    <div class="overlay"></div>
+                    <span class="project-text">Movie Recommendation System</span>
+                </div>
+            </a>
+
+            <a href="https://github.com/lledoerik/horacat" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Horacat project repository">
+                <div class="project-img">
+                    <img src="img/clock.jpg" alt="Horacat application interface">
+                    <div class="overlay"></div>
+                    <span class="project-text">Horacat</span>
+                </div>
+            </a>
+
+            <a href="https://github.com/lledoerik/recommender-system" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View ML Recommender System repository">
+                <div class="project-img">
+                    <img src="img/movie.jpg" alt="Machine learning recommender system">
+                    <div class="overlay"></div>
+                    <span class="project-text">ML Recommender System</span>
+                </div>
+            </a>
+
+            <a href="https://lledoerik.github.io/institut-poblenou-bootstrap/" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Institut Poblenou website">
+                <div class="project-img">
+                    <img src="img/insti.jpg" alt="Institut Poblenou website screenshot">
+                    <div class="overlay"></div>
+                    <span class="project-text">Institut Poblenou Website</span>
+                </div>
+            </a>
+
+            <a href="https://lledoerik.github.io/to-do/" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View To-Do List application">
+                <div class="project-img">
+                    <img src="img/notebook.jpg" alt="To-do list application interface">
+                    <div class="overlay"></div>
+                    <span class="project-text">Task Management App</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Language Proficiency Section -->
+    <section class="languages section" id="languages">
+        <h2 class="section-title">Language Proficiency</h2>
+
+        <div class="languages-container bd-grid">
+            <div class="language-item">
+                <span class="language-flag fi fi-es-ct" aria-hidden="true"></span>
+                <div class="language-content">
+                    <span class="language-name">Catalan</span>
+                    <span class="language-level native">Native</span>
+                </div>
+            </div>
+
+            <div class="language-item">
+                <span class="language-flag fi fi-es" aria-hidden="true"></span>
+                <div class="language-content">
+                    <span class="language-name">Spanish</span>
+                    <span class="language-level native">Native</span>
+                </div>
+            </div>
+
+            <div class="language-item">
+                <span class="language-flag fi fi-gb" aria-hidden="true"></span>
+                <div class="language-content">
+                    <span class="language-name">English</span>
+                    <span class="language-level intermediate">B2</span>
+                </div>
+            </div>
+
+            <div class="language-item">
+                <span class="language-flag fi fi-fr" aria-hidden="true"></span>
+                <div class="language-content">
+                    <span class="language-name">French</span>
+                    <span class="language-level basic">Basic</span>
+                </div>
+            </div>
+
+            <div class="language-item">
+                <span class="language-flag fi fi-it" aria-hidden="true"></span>
+                <div class="language-content">
+                    <span class="language-name">Italian</span>
+                    <span class="language-level basic">Basic</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer Contact Information -->
+<footer class="footer">
+    <div class="footer-container bd-grid">
+        <div class="footer-content">
+            <h2 class="footer-title">Èrik Calvo Lledó</h2>
+            <p class="footer-subtitle">Junior Software Developer</p>
+            <div class="footer-contact">
+                <a href="mailto:lledoerik@gmail.com" class="footer-contact-link">
+                    <i class="bx bx-envelope"></i> lledoerik@gmail.com
+                </a>
+                <span class="footer-separator" aria-hidden="true">•</span>
+                <a href="tel:+34640538469" class="footer-contact-link">
+                    <i class="bx bx-phone"></i> +34 640 53 84 69
+                </a>
+                <span class="footer-separator" aria-hidden="true">•</span>
+                <span class="footer-contact-link">
+                        <i class="bx bx-map"></i> Barcelona, Spain
+                    </span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
