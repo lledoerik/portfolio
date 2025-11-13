@@ -3,43 +3,21 @@
  * Author: Èrik Calvo Lledó
  *
  * This script handles interactive features including:
- * - Mobile navigation menu toggle
  * - Active navigation link tracking with animated pill indicator
  * - Scroll-based navigation highlighting (scroll spy)
+ * - Hide/show navbar based on scroll direction (desktop only)
  * - Theme switching between dark and light modes
  * - Scroll reveal animations for content sections
  * - Loading animation management
+ * - Smooth scroll to sections with proper offset
  */
-
-// ========================================
-// Mobile Navigation Menu Toggle
-// ========================================
-
-/**
- * Initializes mobile menu toggle functionality
- * @param {string} toggleId - ID of the toggle button element
- * @param {string} navId - ID of the navigation menu element
- */
-const initializeMobileMenu = (toggleId, navId) => {
-    const toggleButton = document.getElementById(toggleId);
-    const navigationMenu = document.getElementById(navId);
-
-    if (toggleButton && navigationMenu) {
-        toggleButton.addEventListener('click', () => {
-            navigationMenu.classList.toggle('show');
-        });
-    }
-};
-
-initializeMobileMenu('nav-toggle', 'nav-menu');
-
 
 // ========================================
 // Navigation Link Management
 // ========================================
 
 const navigationLinks = document.querySelectorAll('.nav-link');
-const pageSections = document.querySelectorAll('.section');
+const pageSections = document.querySelectorAll('.section, .home');
 const navigationPill = document.querySelector('.nav-pill');
 
 /**
@@ -50,21 +28,23 @@ const navigationPill = document.querySelector('.nav-pill');
 function animateNavigationPill(element) {
     if (navigationPill && element) {
         const elementRect = element.getBoundingClientRect();
-        const menuRect = element.closest('.nav-menu').getBoundingClientRect();
+        const listRect = element.closest('.nav-list').getBoundingClientRect();
 
         // Calculate and apply pill position and dimensions
         navigationPill.style.width = `${elementRect.width}px`;
         navigationPill.style.height = `${elementRect.height}px`;
-        navigationPill.style.left = `${elementRect.left - menuRect.left}px`;
-        navigationPill.style.top = `${elementRect.top - menuRect.top}px`;
+        navigationPill.style.left = `${elementRect.left - listRect.left}px`;
+        navigationPill.style.top = `${elementRect.top - listRect.top}px`;
     }
 }
 
 /**
  * Handles navigation link click events
- * Updates active state, animates pill position, and closes mobile menu
+ * Updates active state and animates pill position
  */
-function handleNavigationClick() {
+function handleNavigationClick(event) {
+    event.preventDefault();
+    
     // Remove active class from all links
     navigationLinks.forEach(link => link.classList.remove('active'));
 
@@ -72,9 +52,20 @@ function handleNavigationClick() {
     this.classList.add('active');
     animateNavigationPill(this);
 
-    // Close mobile menu after navigation
-    const mobileMenu = document.getElementById('nav-menu');
-    mobileMenu.classList.remove('show');
+    // Smooth scroll to section
+    const targetId = this.getAttribute('href');
+    const targetSection = document.querySelector(targetId);
+    
+    if (targetSection) {
+        const headerOffset = targetId === '#home' ? 60 : 120;
+        const elementPosition = targetSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    }
 }
 
 // Attach click handlers to all navigation links
@@ -82,36 +73,60 @@ navigationLinks.forEach(link => link.addEventListener('click', handleNavigationC
 
 
 // ========================================
-// Scroll-Based Navigation Highlighting
-// ========================================
+// Scroll-Based Navigation Highlighting & Hide/Show
+// ======================================== */
+
+let lastScrollTop = 0;
+const floatingNav = document.querySelector('.floating-nav');
+const scrollThreshold = 100;
+const isMobile = window.innerWidth <= 768;
 
 /**
  * Updates active navigation link based on current scroll position
- * Implements scroll spy functionality to highlight current section
+ * Also handles hiding/showing the navbar based on scroll direction (desktop only)
  */
 function updateActiveNavigationOnScroll() {
     const scrollPosition = window.pageYOffset;
+
+    // Hide/Show navbar based on scroll direction (only on desktop)
+    if (!isMobile && floatingNav) {
+        if (Math.abs(scrollPosition - lastScrollTop) > scrollThreshold) {
+            if (scrollPosition > lastScrollTop && scrollPosition > 300) {
+                // Scrolling down & not at the very top
+                floatingNav.classList.add('nav-hidden');
+            } else {
+                // Scrolling up
+                floatingNav.classList.remove('nav-hidden');
+            }
+            lastScrollTop = scrollPosition;
+        }
+    }
 
     // Clear all active states
     navigationLinks.forEach(link => link.classList.remove('active'));
 
     // Find and highlight the current section's navigation link
+    let currentSection = '';
+    
     pageSections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100;
+        const sectionTop = section.offsetTop - 150;
         const sectionId = section.getAttribute('id');
-
-        if (scrollPosition > sectionTop && scrollPosition <= sectionTop + sectionHeight) {
-            const activeLink = document.querySelector(`.nav-link[href*="${sectionId}"]`);
-            if (activeLink) {
-                activeLink.classList.add('active');
-                animateNavigationPill(activeLink);
-            }
+        
+        if (scrollPosition >= sectionTop) {
+            currentSection = sectionId;
         }
     });
+
+    if (currentSection) {
+        const activeLink = document.querySelector(`.nav-link[href*="${currentSection}"]`);
+        if (activeLink) {
+            activeLink.classList.add('active');
+            animateNavigationPill(activeLink);
+        }
+    }
 }
 
-// Attach scroll listener for navigation highlighting
+// Attach scroll listener for navigation highlighting and hide/show
 window.addEventListener('scroll', updateActiveNavigationOnScroll);
 
 
@@ -152,7 +167,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize navigation pill position on page load
     const activeLink = document.querySelector('.nav-link.active');
     if (activeLink) {
-        animateNavigationPill(activeLink);
+        // Wait for layout to settle
+        setTimeout(() => {
+            animateNavigationPill(activeLink);
+        }, 100);
     }
 });
 
@@ -220,5 +238,23 @@ window.addEventListener('load', () => {
                 animationContainer.remove();
             }
         });
+    }
+});
+
+
+// ========================================
+// Resize Handler
+// ========================================
+
+/**
+ * Updates mobile flag on window resize
+ */
+window.addEventListener('resize', () => {
+    const wasMobile = isMobile;
+    const nowMobile = window.innerWidth <= 768;
+    
+    if (wasMobile !== nowMobile && floatingNav) {
+        // Reset navbar visibility when switching between mobile/desktop
+        floatingNav.classList.remove('nav-hidden');
     }
 });

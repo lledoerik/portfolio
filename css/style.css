@@ -1,7 +1,7 @@
 /**
  * Portfolio Website Styles
  * Author: Èrik Calvo Lledó
- * Description: Main stylesheet for professional portfolio website
+ * Description: Main stylesheet for professional portfolio website with separated header
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
@@ -42,6 +42,7 @@
     --z-normal: 1;
     --z-tooltip: 10;
     --z-fixed: 100;
+    --z-modal: 200;
 
     /* Animation variables */
     --primary1: #0E2431;
@@ -77,7 +78,7 @@ html {
 
 body {
     margin: 0;
-    padding-top: 5rem;
+    padding-top: 3.5rem;
     font-family: var(--body-font);
     font-size: var(--normal-font-size);
     color: var(--text-color);
@@ -150,132 +151,33 @@ img {
 }
 
 /* ========================================
-   Modern Floating Navigation Header
+   Top Header (Name + Theme Toggle)
    ======================================== */
-.l-header {
+.top-header {
     width: 100%;
     position: fixed;
-    top: 1.5rem;
+    top: 0;
     left: 0;
-    z-index: var(--z-fixed);
-    background-color: transparent;
-    box-shadow: none;
-    display: flex;
-    justify-content: center;
-    padding: 0 2rem;
-    animation: fadeInDown 0.8s ease-out;
-}
-
-.nav {
-    height: auto;
+    z-index: var(--z-modal);
+    background-color: var(--background-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.75rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.75rem 2rem;
-    background: rgba(28, 46, 61, 0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: 3rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    max-width: 1200px;
-    width: 100%;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
-.nav:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-}
-
-[data-theme="light"] .nav {
-    background: rgba(255, 255, 255, 0.85);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-}
-
-[data-theme="light"] .nav:hover {
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-}
-
-.nav-logo {
+.site-name {
     font-weight: 600;
     color: var(--text-color);
     font-size: 1.1rem;
+    letter-spacing: 0.5px;
 }
 
-.nav-menu {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.nav-list {
-    display: flex;
-    list-style: none;
-    gap: 0.5rem;
-    margin: 0;
-    padding: 0;
-    align-items: center;
-    background: rgba(64, 112, 244, 0.15);
-    border-radius: 2rem;
-    padding: 0.4rem;
-    position: relative;
-}
-
-[data-theme="light"] .nav-list {
-    background: rgba(52, 152, 219, 0.1);
-}
-
-.nav-item {
-    margin: 0;
-    list-style: none;
-}
-
-.nav-link {
-    position: relative;
-    color: var(--text-color);
-    padding: 0.6rem 1.5rem;
-    border-radius: 2rem;
-    transition: all 0.3s ease;
-    display: block;
-    font-size: 0.95rem;
-    font-weight: 500;
-    z-index: 2;
-}
-
-.nav-link:hover {
-    color: var(--first-color);
-}
-
-.nav-link.active {
-    color: white;
-    font-weight: 600;
-}
-
-/* Animated pill indicator for active navigation link */
-.nav-pill {
-    position: absolute;
-    background: linear-gradient(135deg, var(--first-color), #5e8ef6);
-    border-radius: 2rem;
-    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    z-index: 1;
-    opacity: 1;
-    pointer-events: none;
-    box-shadow: 0 4px 12px rgba(64, 112, 244, 0.4);
-}
-
-[data-theme="light"] .nav-pill {
-    background: linear-gradient(135deg, #3498db, #5dade2);
-    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
-}
-
-/* Theme Toggle Switch */
 .theme-switch-wrapper {
     display: flex;
     align-items: center;
-    margin-left: 1rem;
 }
 
 .theme-switch {
@@ -298,18 +200,18 @@ img {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(64, 112, 244, 0.3);
     transition: 0.4s;
     border-radius: 34px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--first-color);
 }
 
 .slider:before {
     position: absolute;
     content: "";
-    height: 20px;
-    width: 20px;
-    left: 3px;
+    height: 18px;
+    width: 18px;
+    left: 2px;
     bottom: 2px;
     background-color: var(--first-color);
     transition: 0.4s;
@@ -317,7 +219,8 @@ img {
 }
 
 input:checked + .slider {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 165, 0, 0.3);
+    border-color: #ffa500;
 }
 
 input:checked + .slider:before {
@@ -325,14 +228,99 @@ input:checked + .slider:before {
     background-color: #ffa500;
 }
 
-/* Mobile menu toggle button */
-.nav-toggle {
-    display: none;
+/* ========================================
+   Floating Navigation Bar (Desktop)
+   ======================================== */
+.floating-nav {
+    position: fixed;
+    top: 4.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: var(--z-fixed);
+    transition: transform 0.3s ease-in-out, opacity 0.3s;
+}
+
+.floating-nav.nav-hidden {
+    transform: translateX(-50%) translateY(-150%);
+    opacity: 0;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    padding: 0.4rem 0.5rem;
+    background: rgba(28, 46, 61, 0.9);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+[data-theme="light"] .nav {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 0.2rem;
+    margin: 0;
+    padding: 0.25rem;
+    align-items: center;
+    background: rgba(64, 112, 244, 0.12);
+    border-radius: 1.5rem;
+    position: relative;
+}
+
+[data-theme="light"] .nav-list {
+    background: rgba(52, 152, 219, 0.08);
+}
+
+.nav-item {
+    margin: 0;
+    list-style: none;
+}
+
+.nav-link {
+    position: relative;
     color: var(--text-color);
-    font-size: 1.5rem;
-    cursor: pointer;
-    background: none;
-    border: none;
+    padding: 0.4rem 1rem;
+    border-radius: 1.5rem;
+    transition: all 0.3s ease;
+    display: block;
+    font-size: 0.813rem;
+    font-weight: 500;
+    z-index: 2;
+    white-space: nowrap;
+}
+
+.nav-link:hover {
+    color: var(--first-color);
+}
+
+.nav-link.active {
+    color: white;
+    font-weight: 600;
+}
+
+.nav-pill {
+    position: absolute;
+    background: linear-gradient(135deg, var(--first-color), #5e8ef6);
+    border-radius: 1.5rem;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 1;
+    opacity: 1;
+    pointer-events: none;
+    box-shadow: 0 3px 10px rgba(64, 112, 244, 0.4);
+}
+
+[data-theme="light"] .nav-pill {
+    background: linear-gradient(135deg, #3498db, #5dade2);
+    box-shadow: 0 3px 10px rgba(52, 152, 219, 0.3);
 }
 
 /* ========================================
@@ -340,7 +328,7 @@ input:checked + .slider:before {
    ======================================== */
 .home {
     height: auto;
-    min-height: calc(100vh - var(--header-height));
+    min-height: calc(100vh - 4rem);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -873,7 +861,7 @@ input:checked + .slider:before {
         text-align: left;
         align-items: center;
         padding: 0;
-        height: calc(100vh - 5rem);
+        height: calc(100vh - 4rem);
         min-height: 600px;
     }
 
@@ -931,73 +919,71 @@ input:checked + .slider:before {
     }
 }
 
+/* ========================================
+   Mobile Styles
+   ======================================== */
 @media screen and (max-width: 768px) {
-    .l-header {
-        top: 1rem;
-        padding: 0 1rem;
+    body {
+        padding-top: 7rem;
+    }
+
+    .top-header {
+        padding: 0.6rem 1rem;
+    }
+
+    .site-name {
+        font-size: 0.95rem;
+    }
+
+    .theme-switch {
+        width: 44px;
+        height: 22px;
+    }
+
+    .slider:before {
+        height: 16px;
+        width: 16px;
+    }
+
+    input:checked + .slider:before {
+        transform: translateX(20px);
+    }
+
+    /* Mobile navigation - always visible, very compact */
+    .floating-nav {
+        position: fixed;
+        top: 3.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 1rem);
+        max-width: 500px;
+    }
+
+    .floating-nav.nav-hidden {
+        transform: translateX(-50%);
+        opacity: 1;
     }
 
     .nav {
-        padding: 0.75rem 1rem;
-        border-radius: 2rem;
-    }
-
-    .nav-menu {
-        position: fixed;
-        top: 5rem;
-        right: -100%;
-        width: calc(100% - 2rem);
-        max-width: 300px;
-        height: auto;
-        background: rgba(28, 46, 61, 0.95);
-        backdrop-filter: blur(20px);
-        padding: 2rem 1rem;
-        transition: right 0.5s;
-        z-index: var(--z-fixed);
+        padding: 0.3rem 0.4rem;
         border-radius: 1.5rem;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        margin-right: 1rem;
-    }
-
-    [data-theme="light"] .nav-menu {
-        background: rgba(255, 255, 255, 0.95);
-    }
-
-    .nav-menu.show {
-        right: 0;
+        width: 100%;
     }
 
     .nav-list {
-        flex-direction: column;
-        gap: 0.5rem;
         width: 100%;
-        background: transparent;
-        padding: 0;
+        justify-content: space-between;
+        padding: 0.2rem;
+        gap: 0.15rem;
     }
 
     .nav-link {
-        width: 100%;
-        text-align: left;
-        padding: 0.75rem 1rem;
+        padding: 0.35rem 0.6rem;
+        font-size: 0.7rem;
     }
 
-    .nav-pill {
-        display: none;
-    }
-
-    .nav-link.active {
-        background: linear-gradient(135deg, var(--first-color), #5e8ef6);
-        color: white;
-    }
-
-    .nav-toggle {
-        display: block;
-    }
-
-    .theme-switch-wrapper {
-        margin-top: 1rem;
-        margin-left: 0;
-        justify-content: center;
+    .home {
+        min-height: calc(100vh - 7rem);
     }
 
     .home-img {
@@ -1006,6 +992,18 @@ input:checked + .slider:before {
 
     .home-title {
         font-size: 2rem;
+    }
+}
+
+/* Very small screens */
+@media screen and (max-width: 380px) {
+    .nav-link {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.65rem;
+    }
+    
+    .site-name {
+        font-size: 0.85rem;
     }
 }
 
