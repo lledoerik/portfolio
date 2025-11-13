@@ -26,17 +26,28 @@ const navigationPill = document.querySelector('.nav-pill');
  * @param {HTMLElement} element - Target navigation link element
  */
 function animateNavigationPill(element) {
-    if (navigationPill && element) {
-        const elementRect = element.getBoundingClientRect();
-        const listRect = element.closest('.nav-list').getBoundingClientRect();
+    if (!navigationPill || !element) return;
 
-        // Calculate and apply pill position and dimensions
-        navigationPill.style.width = `${elementRect.width}px`;
-        navigationPill.style.height = `${elementRect.height}px`;
-        navigationPill.style.left = `${elementRect.left - listRect.left}px`;
-        navigationPill.style.top = `${elementRect.top - listRect.top}px`;
-    }
+    const list = element.closest('.nav-list');
+    const elementRect = element.getBoundingClientRect();
+    const listRect = list.getBoundingClientRect();
+
+    // Llegim el padding real del contenidor (no el restem directament)
+    const listStyle = window.getComputedStyle(list);
+    const paddingLeft = parseFloat(listStyle.paddingLeft);
+    const paddingTop = parseFloat(listStyle.paddingTop);
+
+    // Calculem la posició precisa dins de la nav-list
+    const left = element.offsetLeft - list.scrollLeft;
+    const top = element.offsetTop - list.scrollTop;
+
+    // Ajustem la posició considerant padding i possible diferència de subpíxel
+    navigationPill.style.width = `${element.offsetWidth}px`;
+    navigationPill.style.height = `${element.offsetHeight}px`;
+    navigationPill.style.left = `${left + paddingLeft}px`;
+    navigationPill.style.top = `${top + paddingTop}px`;
 }
+
 
 /**
  * Handles navigation link click events
@@ -44,7 +55,7 @@ function animateNavigationPill(element) {
  */
 function handleNavigationClick(event) {
     event.preventDefault();
-    
+
     // Remove active class from all links
     navigationLinks.forEach(link => link.classList.remove('active'));
 
@@ -55,7 +66,7 @@ function handleNavigationClick(event) {
     // Smooth scroll to section
     const targetId = this.getAttribute('href');
     const targetSection = document.querySelector(targetId);
-    
+
     if (targetSection) {
         const headerOffset = targetId === '#home' ? 60 : 120;
         const elementPosition = targetSection.getBoundingClientRect().top;
@@ -107,11 +118,11 @@ function updateActiveNavigationOnScroll() {
 
     // Find and highlight the current section's navigation link
     let currentSection = '';
-    
+
     pageSections.forEach(section => {
         const sectionTop = section.offsetTop - 150;
         const sectionId = section.getAttribute('id');
-        
+
         if (scrollPosition >= sectionTop) {
             currentSection = sectionId;
         }
@@ -252,7 +263,7 @@ window.addEventListener('load', () => {
 window.addEventListener('resize', () => {
     const wasMobile = isMobile;
     const nowMobile = window.innerWidth <= 768;
-    
+
     if (wasMobile !== nowMobile && floatingNav) {
         // Reset navbar visibility when switching between mobile/desktop
         floatingNav.classList.remove('nav-hidden');
